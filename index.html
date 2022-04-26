@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Html CRUD with Pure JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+    <script></script>
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <td>
+          <form
+            onsubmit="event.preventDefault();onFormSubmit();"
+            autocomplete="off"
+            enctype="multipart/form-data"
+            name="formname"
+            id="formname"
+          >
+            <div>
+              <label>Full Name</label>
+              <input type="text" name="fullName" id="fullName" />
+              <span id="error"><p id="name_error" style="color: red"></p></span>
+            </div>
+            <div>
+              <label>Age</label>
+              <input type="number" name="age" id="age" />
+            </div>
+            <br />
+
+            <div>
+              <label>Photo</label>
+              <input
+                type="file"
+                name="file"
+                id="file"
+                onchange="loadFile(this);"
+              />
+              <img id="output" width="50" />
+            </div>
+            <br />
+
+            <div class="form-action-buttons">
+              <input
+                type="submit"
+                value="Submit"
+                style="
+                  color: white;
+                  background-color: black;
+                  position: relative;
+                  margin: 0%;
+                  margin-right: 300px;
+                "
+              />
+            </div>
+          </form>
+        </td>
+        <td>
+          <table class="list" id="employeeList" style="border: 1px">
+            <thead>
+              <tr style="border: 1px">
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Age</th>
+                <th>Photo</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <script src="script.js"></script>
+    <script src="validation.js"></script>
+  </body>
+</html>
